@@ -15,37 +15,39 @@ use Slim\Factory\AppFactory;
 use Slim\Factory\ServerRequestCreatorFactory;
 use Slim\ResponseEmitter;
 use UserFrosting\System\Sprinkles\Sprinkle;
+use UserFrosting\System\CLI;
 
+/**
+ * UserFrosting main class.
+ */
 class UserFrosting
 {
-    /**
-     * Starts the app in CLI mode and returns an instance to interact with.
-     * The `bakery` CLI uses this.
-     */
-    public static function cli(): UserFrosting
-    {
-
-    }
-
-    /**
-     * Starts the app in web mode.
-     */
-    public static function web(): void
-    {
-
-    }
-
-
-
-
     /**
      * @var App The Slim application instance.
      */
     protected $app;
 
-    protected function __construct(bool $cli = false)
+    protected function __construct()
     {
         $this->app = AppFactory::create();
+    }
+
+    /**
+     * Starts the app in CLI mode and returns an instance to integrate with.
+     * The `bakery` CLI uses this.
+     */
+    public function cli(): CLI
+    {
+        return new CLI();
+    }
+
+    /**
+     * Fires off web request handling.
+     * Once this has returned, the response will have been sent.
+     */
+    public function web(): void
+    {
+
     }
 
     /**
