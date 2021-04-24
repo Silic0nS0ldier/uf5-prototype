@@ -1,5 +1,5 @@
 {
-    "name": "userfrosting/userfrosting",
+    "name": "userfrosting/system",
     "description": "A secure, modern user management system for PHP.",
     "type": "library",
     "keywords": [
@@ -24,12 +24,13 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^8.0",
         "slim/slim": "^4.4",
         "psr/http-message": "^1.0",
         "slim/psr7": "^1.0",
         "rockettheme/toolbox": "^1.5",
-        "illuminate/filesystem": "^7.3"
+        "illuminate/filesystem": "^7.3",
+        "php-ds/php-ds": "^1.3"
     },
     "autoload": {
         "psr-4": {
@@ -38,7 +39,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "UserFrosting\\Tests\\": "tests"
+            "UserFrosting\\System\\Tests\\": "tests"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }

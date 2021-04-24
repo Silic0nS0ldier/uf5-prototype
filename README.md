@@ -1,16 +1,15 @@
 # UserFrosting 5 Prototype
 
-This repo explores one possible incarnation of UserFrosting 5. The goal is to extract the UserFrosting framework entirely into a separate package such that indivudal projects have more flexibility around their preferred workflows, and to permit the creation of maintainable project skeletons.
+This repo explores one possible incarnation of UserFrosting 5. The goal is to extract the UserFrosting framework entirely into a separate package such that individual projects have more flexibility around their preferred workflows, and to permit the creation of maintainable project skeletons.
 
-It is expected that the change explored here will present a major breaking change, but one that doesn't require a complete refactor of an existing project. To this end the prototype will try to maintain existing conventions and attempt to constrain the scope to limit the number of breaking changes.
+This will present a major breaking change compared to v4. Common business logic areas should be less disrupted.
 
 Notable differences to v4;
-* Any vendor package with a type of `userfrosting-sprinkle` will be loaded, meaning sprinkles can specify compatibility contraints and dependencies.
-  * Load order is resolved from the dependency graph to ensure correct load order automatically. This may be overridden if required.
-  * Project code is always loaded last, such that it always overrides and can safely depend on resources from required sprinkles.
-* Your actual project source is a superset of a sprinkle.
-* UserFrosting is now fully delivered by composer.
-* Strict adherence to semantic versioning, such that upgrade guides should not be required for feature level releases. This will likely mean major version bumps occuring at an increased pace, however updates will also be delivered sooner.
+* Sprinkles register their dependencies at runtime, such that load order is always valid or will produce a clear deadlock error should a circular dependency chain form.
+* There is (will be?) only 1 type of project, sprinkle. If published to Packagist, it may be consumed as a sprinkle. Web and `bakery` CLI code is minimal.
+* Reliance on reflection has been reduced considerably.
+* UserFrosting system all is delivered through composer.
+* API surface has been reduced, avoiding global variables and preferring stateless (static) functions. This helps adhere to semantic versioning.
 * Improved support for multi-node environments such as AWS Elastic Beanstalk, Azure Service Fabric, and Kubernetes.
 
 ## Looking Forward

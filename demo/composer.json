@@ -26,16 +26,16 @@
         }
     ],
     "require": {
-        "userfrosting/userfrosting": "@dev"
+        "userfrosting/system": "@dev"
     },
     "autoload": {
         "psr-4": {
-            "UserFrosting\\Demo\\": "src"
+            "UF5Demo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "UserFrosting\\Tests\\": "tests"
+            "UF5Demo\\Tests\\": "tests"
         }
     }
 }
