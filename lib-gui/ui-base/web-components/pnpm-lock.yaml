@@ -1,0 +1,15 @@
+lockfileVersion: 5.3
+
+specifiers:
+  '@stencil/core': ^2.0.1
+
+dependencies:
+  '@stencil/core': 2.5.2
+
+packages:
+
+  /@stencil/core/2.5.2:
+    resolution: {integrity: sha512-bgjPXkSzzg1WnTgVUm6m5ZzpKt602WmA/QljODAW1xVN40OHJdbGblzF/F6MFzqv2c5Cy30CB41arc8qADIdcQ==}
+    engines: {node: '>=12.10.0', npm: '>=6.0.0'}
+    hasBin: true
+    dev: false
