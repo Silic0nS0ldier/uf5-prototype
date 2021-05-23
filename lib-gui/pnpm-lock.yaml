@@ -1,22 +1,38 @@
 lockfileVersion: 5.3
 
-specifiers:
-  '@stencil/core': ^2.0.1
-  '@types/jest': 26.0.21
-  '@types/puppeteer': 5.4.3
-  jest: 26.6.3
-  jest-cli: 26.6.3
-  puppeteer: 5.5.0
+importers:
 
-dependencies:
-  '@stencil/core': 2.5.2
+  ui-base/react-components:
+    specifiers:
+      '@types/react': ^17.0.6
+      '@types/react-dom': ^17.0.5
+      '@userfrosting/ui-base-web-components': workspace:*
+      react: ^17.0.2
+    dependencies:
+      '@userfrosting/ui-base-web-components': link:../web-components
+    devDependencies:
+      '@types/react': 17.0.6
+      '@types/react-dom': 17.0.5
+      react: 17.0.2
 
-devDependencies:
-  '@types/jest': 26.0.21
-  '@types/puppeteer': 5.4.3
-  jest: 26.6.3
-  jest-cli: 26.6.3
-  puppeteer: 5.5.0
+  ui-base/web-components:
+    specifiers:
+      '@stencil/core': ^2.5.2
+      '@stencil/react-output-target': ^0.0.9
+      '@types/jest': 26.0.21
+      '@types/puppeteer': 5.4.3
+      jest: 26.6.3
+      jest-cli: 26.6.3
+      puppeteer: 5.5.0
+    dependencies:
+      '@stencil/core': 2.5.2
+    devDependencies:
+      '@stencil/react-output-target': 0.0.9_@stencil+core@2.5.2
+      '@types/jest': 26.0.21
+      '@types/puppeteer': 5.4.3
+      jest: 26.6.3
+      jest-cli: 26.6.3
+      puppeteer: 5.5.0
 
 packages:
 
@@ -551,6 +567,14 @@ packages:
     hasBin: true
     dev: false
 
+  /@stencil/react-output-target/0.0.9_@stencil+core@2.5.2:
+    resolution: {integrity: sha512-t2sSkm/VGftBqewK47eZonaHIXW7CYWlsDy6Ln4jqNVpr93CuPWkg7rsnPiZrJrU1NBuTgA0hC2xoRcAJVm7Sw==}
+    peerDependencies:
+      '@stencil/core': '>=1.8.0'
+    dependencies:
+      '@stencil/core': 2.5.2
+    dev: true
+
   /@types/babel__core/7.1.14:
     resolution: {integrity: sha512-zGZJzzBUVDo/eV6KgbE0f0ZI7dInEYvo12Rb70uNQDshC3SkRMb67ja0GgRHZgAX3Za6rhaWlvbDO8rrGyAb1g==}
     dependencies:
@@ -621,10 +645,32 @@ packages:
     resolution: {integrity: sha512-PijRCG/K3s3w1We6ynUKdxEc5AcuuH3NBmMDP8uvKVp6X43UY7NQlTzczakXP3DJR0F4dfNQIGjU2cUeRYs2AA==}
     dev: true
 
+  /@types/prop-types/15.7.3:
+    resolution: {integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==}
+    dev: true
+
   /@types/puppeteer/5.4.3:
     resolution: {integrity: sha512-3nE8YgR9DIsgttLW+eJf6mnXxq8Ge+27m5SU3knWmrlfl6+KOG0Bf9f7Ua7K+C4BnaTMAh3/UpySqdAYvrsvjg==}
     dependencies:
       '@types/node': 15.6.0
+    dev: true
+
+  /@types/react-dom/17.0.5:
+    resolution: {integrity: sha512-ikqukEhH4H9gr4iJCmQVNzTB307kROe3XFfHAOTxOXPOw7lAoEXnM5KWTkzeANGL5Ce6ABfiMl/zJBYNi7ObmQ==}
+    dependencies:
+      '@types/react': 17.0.6
+    dev: true
+
+  /@types/react/17.0.6:
+    resolution: {integrity: sha512-u/TtPoF/hrvb63LdukET6ncaplYsvCvmkceasx8oG84/ZCsoLxz9Z/raPBP4lTAiWW1Jb889Y9svHmv8R26dWw==}
+    dependencies:
+      '@types/prop-types': 15.7.3
+      '@types/scheduler': 0.16.1
+      csstype: 3.0.8
+    dev: true
+
+  /@types/scheduler/0.16.1:
+    resolution: {integrity: sha512-EaCxbanVeyxDRTQBkdLb3Bvl/HK7PBK6UJjsSixB0iHKoWxE5uu2Q/DgtpOhPIojN0Zl1whvOd7PoHs2P0s5eA==}
     dev: true
 
   /@types/stack-utils/2.0.0:
@@ -1168,6 +1214,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       cssom: 0.3.8
+    dev: true
+
+  /csstype/3.0.8:
+    resolution: {integrity: sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw==}
     dev: true
 
   /dashdash/1.14.1:
@@ -2555,6 +2605,13 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: true
 
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+    dev: true
+
   /lru-cache/6.0.0:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
@@ -2761,6 +2818,11 @@ packages:
 
   /oauth-sign/0.9.0:
     resolution: {integrity: sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==}
+    dev: true
+
+  /object-assign/4.1.1:
+    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    engines: {node: '>=0.10.0'}
     dev: true
 
   /object-copy/0.1.0:
@@ -2993,6 +3055,14 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+    dev: true
+
+  /react/17.0.2:
+    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
     dev: true
 
   /read-pkg-up/7.0.1:

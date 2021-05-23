@@ -1,0 +1,1 @@
+Bindings for React. Code is generated from `@userfrosting/ui-base-web-components`.
