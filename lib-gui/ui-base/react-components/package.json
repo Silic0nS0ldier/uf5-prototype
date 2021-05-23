@@ -4,9 +4,10 @@
         "@userfrosting/ui-base-web-components": "workspace:*"
     },
     "devDependencies": {
-        "react": "^17.0.2",
         "@types/react": "^17.0.6",
-        "@types/react-dom": "^17.0.5"
+        "@types/react-dom": "^17.0.5",
+        "react": "^17.0.2",
+        "typescript": "^4.2.4"
     },
     "peerDependencies": {
         "react": "^17.0.2",

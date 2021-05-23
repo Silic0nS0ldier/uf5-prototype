@@ -1,2 +1,3 @@
 node_modules
-src
+src/main.ts
+src/react-component-lib/
